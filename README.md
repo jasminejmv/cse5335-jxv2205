@@ -22,5 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-# cse5335-jxv2205
-# cse5335-jxv2205
