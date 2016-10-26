@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+a. Ruby on Rails. 
+	Reasons for selecting: New to web programming, 
+			One of suggested server frameworks
+			I intend to use both frameworks over both project
 
-Things you may want to cover:
+b. JQuery for client framework. Same reasons as above
 
-* Ruby version
+c. Being new to web programming it wasn't a cakewalk in particular
 
-* System dependencies
+d. I understood the 'Convention over configuration' architecture the hard way
 
-* Configuration
+e.  Google API for marking of locations on a sized maps.
+    Chartjs for the visualizing the data in pie chart.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+f. Commands to deploy and run server
+$heroku create
+$git push heroku master
