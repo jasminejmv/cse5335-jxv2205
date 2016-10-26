@@ -4,8 +4,10 @@ a. Ruby on Rails.
 	Reasons for selecting: New to web programming, 
 			One of suggested server frameworks
 			I intend to use both frameworks over both project
+	
 
-b. JQuery for client framework. Same reasons as above
+b. JQuery for client framework. Besides the same reasons as above, wanted and exposure to AJAX technology.
+
 
 c. Being new to web programming it wasn't a cakewalk in particular
 
