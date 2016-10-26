@@ -1,2 +1,60 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNzyBnDKb__Otr1nAgK7pb0a7EKaQcTKU"></script>
+<script type="text/javascript" src="../jquery.googlemap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+<script>
+
+  $(document).ready(function(){
+    $('#data').click(function(){
+      $.get("/api/myvalues",function(jdata){
+        console.log(jdata)
+        var mychartlabel=[];
+        var mychardata=[];
+          $.each(jdata,function(key,value){
+            $("#mydata").append("<tr><td>"+key+"</td><td>"+value+"</td></tr>")
+            mychartlabel.push(key);
+            mychardata.push(value);
+        })
+        mychartlabel.splice(0,2);
+        mychartlabel.splice(12,1);
+        mychardata.splice(0,2);
+        mychardata.splice(12,1);
+
+        $("#mymap").googleMap();
+        $("#mymap").addMarker({
+          coords: [40.730610, -73.935242],
+            type: "TERRAIN",
+            title: "MARKER1"})
+
+        Chart.defaults.global.animation.duration=200;
+        var mycanvas=$("#mychartcanvas");
+        var mybarchart=new Chart(mycanvas,{
+          type:"bar",
+          data:{labels: mychartlabel,
+          datasets:[{
+            label: "False Alarms",
+            data: mychardata
+          }]}
+        })
+      })
+
+    })
+    })
+
+
+</script>
+
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
+<div><button id="data" remote="true">Click to get data</button></div>
+<div>
+  <table id="mydata">
+
+  </table>
+</div>
+
+<div id="mymap" style="height:500px; width:500px"></div>
+
+<div id="mychart" style="margin:20px 0 20px 0">
+  <canvas id="mychartcanvas" width="400" height="200"></canvas>
+</div>
